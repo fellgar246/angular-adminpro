@@ -11,6 +11,19 @@ export class PromesasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    this.getUsuarios().then( usuarios => {
+      console.log(usuarios)
+    });
+
   }
 
+  getUsuarios() {
+    return new Promise( resolve => {
+      fetch( '')
+      .then( resp => resp.json() )
+      .then( body => console.log(body.data) );
+
+    })
+  }
 }
